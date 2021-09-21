@@ -16,7 +16,7 @@ namespace Paradigmas
 
 			do
 			{
-				Console.WriteLine("Escolha a questão:");
+				Console.WriteLine("\nEscolha a questão:");
 				Console.WriteLine("1 - Questão 1: ");
 				Console.WriteLine("2 - Questão 2: ");
 				Console.WriteLine("3 - Questão 3: ");
@@ -127,6 +127,9 @@ namespace Paradigmas
 			Console.Write("Salário bruto: ");
 			funcionario.setSalarioBruto(double.Parse(Console.ReadLine()));
 
+			Console.Write("Imposto: ");
+			funcionario.setImposto(double.Parse(Console.ReadLine()));
+
 
 			Console.Write("\nFuncionário: {0}, R$ {1:0.00}\n", funcionario.getNome(), funcionario.salarioLiquido());
 
@@ -141,14 +144,17 @@ namespace Paradigmas
 		public static void questao5()
 		{
 			double alvo = 60;
+			double nota;
 
 			Aluno aluno = new Aluno();
 			Console.Write("Nome do Aluno: ");
 			aluno.setNome(Console.ReadLine());
 
-
-			Console.Write("Nota do primeiro trimestre: ");
-			aluno.setNota1(double.Parse(Console.ReadLine()));
+			do {
+				Console.Write("Nota do primeiro trimestre: ");
+					nota = double.Parse(Console.ReadLine());
+			} while (nota > 30);
+			aluno.setNota1(nota);
 
 			Console.Write("Nota do segundo trimestre: ");
 			aluno.setNota2(double.Parse(Console.ReadLine()));
